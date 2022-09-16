@@ -1,19 +1,29 @@
 alert("ahhhh")
 
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-const lowerCase = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
-const upperCase = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z]
-//const specialChara = [!, #, %, &, *, +, @]
+let generateBtn = document.querySelector("#generate");
+const alpha = "qwertyuiopasdfghjklzxcvbnm";
+const capsArray = alpha.toUpperCase().split("").sort();
+const lowerArray = alpha.toLowerCase().split("").sort();
+const specialArray = ["!", "#", "%", "&", "*", "+", "@"];
+const LengthArray = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28"];
 
-
-
-
+console.log(capsArray);
+console.log(lowerArray);
+console.log(specialArray);
+console.log(LengthArray);
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  //this is the location where I ask my user what their preferences are
+  //if (lowerCase)
+  //create lowercase in
+//else if (condition2)
+  //statement2
+//else if (condition3)
+  //statement3
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
