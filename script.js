@@ -6,28 +6,37 @@ const alpha = "qwertyuiopasdfghjklzxcvbnm";
 const capsArray = alpha.toUpperCase().split("").sort();
 const lowerArray = alpha.toLowerCase().split("").sort();
 const specialArray = ["!", "#", "%", "&", "*", "+", "@"];
-const LengthArray = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28"];
 
 console.log(capsArray);
 console.log(lowerArray);
 console.log(specialArray);
-console.log(LengthArray);
+
+
+
+function generatePassword() {
+  return Math.floor(Math.random() * [capsArray + lowerArray + specialArray + length]);
+}
 
 // Write password to the #password input
 function writePassword() {
-  //this is the location where I ask my user what their preferences are
-  //if (lowerCase)
-  //create lowercase in
-//else if (condition2)
-  //statement2
-//else if (condition3)
-  //statement3
+  prompt("What would you like the length of your password to be?");
+  
+  if (length<8 && length>128) {
+  alert("Enter a number between 1 and 128");
+  }
+  else {
+  confirm("Would you like your password to include captial letters?");
+  confirm("Would you like your password to include lower case letters?");
+  confirm("Would you like your password to include special characters?");
+  generatePassword();
+  }
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); 
