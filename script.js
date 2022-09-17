@@ -1,5 +1,3 @@
-alert("ahhhh")
-
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 const alpha = "qwertyuiopasdfghjklzxcvbnm";
@@ -13,11 +11,9 @@ console.log(specialArray);
 
 
 
-function generatePassword() {
-  return Math.floor(Math.random() * [capsArray + lowerArray + specialArray + length]);
-}
 
-// Write password to the #password input
+
+
 function writePassword() {
   prompt("What would you like the length of your password to be?");
   
@@ -37,13 +33,11 @@ function writePassword() {
 
 }
 
+function generatePassword() {
+  let criteria = [capsArray, lowerArray, specialArray, length];
+  return Math.floor(Math.random() * [capsArray + lowerArray + specialArray]) + length;
+}
 
-// Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword); 
 
-
-//if (lowerCase) {
- // alert("Your password will include lower case letters.")
-//} else {
-  //alert("Your password will not include lower case letters.")
-//}
